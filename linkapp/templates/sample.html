@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1px" class="col-lg-4 mx-auto shadow p-3 ml-3 mt-5">
+        <tr>
+            <td>title</td>
+            <td>date</td>
+            <td>status</td>
+            <td colspan="2">Action</td>
+        </tr>
+
+        {% for i in data %}
+        <tr>
+            <td>{{i.title}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.status}}</td>
+            <td><a href="{% url 'linkapps:delete1' i.id%}">delete</a></td>
+            <td><a href="{%url 'linkapps:edit1' i.id %}">edit</a></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+
+</body>
+</html>
